@@ -1,0 +1,72 @@
+.follow {
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 60px;
+    max-width: 450px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+.follow__thumb {
+  @media screen and (min-width: 1200px) {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.follow__email {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 16px 15px;
+  background-color: transparent;
+
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: var(--light-text-color);
+
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  outline: none;
+
+  @media screen and (min-width: 1200px) {
+    width: 350px;
+    margin-bottom: 0;
+  }
+}
+.follow__email::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.follow__button {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 10px 32px;
+  min-width: 200;
+  margin-left: 12px;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  background-color: var(--accent-color);
+  color: var(--light-text-color);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+.follow__icon {
+  margin-left: 10px;
+}

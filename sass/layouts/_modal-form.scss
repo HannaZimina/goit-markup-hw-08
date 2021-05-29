@@ -1,0 +1,84 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__heading {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+.form__card {
+  position: relative;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+.form__field {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  outline: none;
+
+  transition: border-color 250ms var(--cubic-bezier);
+}
+.form__field:focus {
+  border-color: var(--accent-color);
+}
+
+.form__mark {
+  font-size: 12px;
+  line-height: 1.16;
+
+  letter-spacing: 0.01em;
+  color: var(--secondary-text-color);
+}
+.form__icon {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+
+  transition: fill 250ms var(--cubic-bezier);
+}
+.form__field:focus + .form__icon {
+  fill: var(--accent-color);
+}
+
+.comment {
+  margin-bottom: 20px;
+  margin-top: 4px;
+}
+
+.comment__area {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  outline: none;
+
+  transition: border-color 250ms var(--cubic-bezier);
+}
+.comment__area:focus {
+  border-color: var(--accent-color);
+}
+.comment__area::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--secondary-text-color);
+}

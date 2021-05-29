@@ -1,0 +1,116 @@
+.footer {
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+}
+.footer__list:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.footer__thumb {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
+  }
+}
+
+.footer__wrap {
+  margin-bottom: 60px;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+.footer__address {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+
+  color: var(--light-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+}
+.footer__mail,
+.footer__number {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic-bezier);
+}
+
+.footer__address:hover,
+.footer__mail:hover,
+.footer__number:hover {
+  color: var(--accent-color);
+}
+
+.footer__address:focus,
+.footer__mail:focus,
+.footer__number:focus {
+  color: var(--accent-color);
+}
+
+.join {
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    margin-left: 70px;
+  }
+}
+.join__heading {
+  margin-top: 0;
+  margin-bottom: 20;
+  font-size: 14px;
+  line-height: 1.14;
+
+  color: var(--light-text-color);
+
+  text-transform: uppercase;
+
+  @media screen and (min-width: 1200px) {
+    text-align: left;
+  }
+}
+.footer__social {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+
+  fill: var(--light-text-color);
+}
+.join__icon {
+  width: 20px;
+  height: 20px;
+
+  fill: var(--light-text-color);
+}
+
+.join .social__item {
+  border-radius: 50%;
+
+  background-color: var(--dark-icon-background);
+}
