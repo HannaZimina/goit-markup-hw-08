@@ -216,22 +216,161 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  height: 100vp;
+  height: 100vh;
+  padding: 48px 40px;
+  background-color: var(--light-text-color);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-menu.is-open {
+    overflow: hidden;
+  }
+}
+
+.mobile-navigation__list {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+}
+
+.mobile-navigation__item {
+  margin-bottom: 32px;
+}
+
+.link__mobile {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  transition: color 250ms var(--cubic-bezier);
+}
+
+.link__mobile:hover,
+.link__mobile:focus {
+  color: var(--accent-color);
+}
+
+.mobile-links__list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-top: 0;
+}
+
+.link__call {
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.link__mail {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+
+.mobile-menu__socials {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.mobile-socials__item {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+}
+
+.mobile-socials__link {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.mobile-socials__item:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  top: 0;
+  left: 0;
+  height: 70%;
+  background-color: rgba(33, 33, 33, 0.2);
+  margin-left: 10px;
 }
 
 .mobile-menu__button {
+  position: absolute;
+  padding: 0;
+  top: 20px;
+  z-index: 2;
+  right: 20px;
   width: 40px;
   height: 40px;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: fill 250ms var(--cubic-bezier);
+}
+
+.mobile-menu__button.is-open {
+  position: fixed;
 }
 
 @media screen and (min-width: 768px) {
   .mobile-menu__button {
     display: none;
   }
+}
+
+.mobile-menu__button:hover,
+.mobile-menu__button:focus {
+  fill: var(--accent-color);
+}
+
+.menu__button-close {
+  display: none;
+}
+
+.mobile-menu__button.is-open .menu__button-menu {
+  display: none;
+}
+
+.mobile-menu__button.is-open .menu__button-close {
+  display: block;
+}
+
+.header {
+  position: relative;
 }
 
 .navigation {
@@ -553,9 +692,16 @@ footer {
 }
 
 .team {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--background-secondary);
+}
+
+@media screen and (min-width: 1200px) {
+  .team {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .team__heading {
@@ -672,6 +818,13 @@ footer {
   padding-bottom: 60px;
 }
 
+@media screen and (min-width: 1200px) {
+  .clients {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
 .clients__heading {
   margin-top: 0;
   margin-bottom: 30px;
@@ -741,6 +894,7 @@ footer {
 
 .backdrop {
   position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
@@ -765,14 +919,29 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  height: 581px;
+  width: 95%;
+  max-width: 450px;
   padding: 40px;
+  overflow-y: auto;
   background-color: var(--light-text-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   opacity: 1;
   transition: transform 250ms var(--cubic-bezier), opacity 250ms var(--cubic-bezier);
+}
+
+@media screen and (min-width: 480px) {
+  .modal {
+    height: 609px;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    max-width: 528px;
+    height: 609px;
+  }
 }
 
 .modal__button {
